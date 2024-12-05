@@ -7,7 +7,9 @@
     "backend-test": "nyc --nycrc-path .nycrc-backend mocha --exit",
     "frontend-instrument": "xcopy public instrumented /I /E /Y & nyc instrument public instrumented",
     "frontend-test": "rmdir -r .nyc_output & nyc --nycrc-path .nycrc-frontend cypress run",
-    "frontend-test-opera": "rmdir -r .nyc_output & nyc --nycrc-path .nycrc-frontend cypress run --browser opera"
+    "frontend-test-opera": "rmdir -r .nyc_output & nyc --nycrc-path .nycrc-frontend cypress run --browser opera",
+    "frontend-test-chrome": "rmdir -r .nyc_output & nyc --nycrc-path .nycrc-frontend cypress run --browser chrome",
+    "frontend-test-edge": "rmdir -r .nyc_output & nyc --nycrc-path .nycrc-frontend cypress run --browser edge"
   },
   "keywords": [],
   "author": "",
