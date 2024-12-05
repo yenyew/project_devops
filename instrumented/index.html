@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobSpotter</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>JobSpotter</h1>
+        <div class="search-bar">
+            <input type="text" id="keyword" placeholder="Enter Keywords">
+            <select id="classification">
+                <option>Any Classification</option>
+            </select>
+            <button onclick="searchJobs()">Search</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#resourceModal">Add New Job</button>
+        </div>
+    </header>
+
+    <div id="job-listings" class="container">
+
+        <!-- Job listings will be displayed here -->
+    </div>
+
+    <!-- Modal for updating job listing -->
+    <div id="updateJobModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2>Update Job Listing</h2>
+            <form id="updateJobForm">
+                <input type="hidden" id="jobId">
+                <label for="jobName">Job Name:</label>
+                <input type="text" id="jobName" name="name" class="modal-input" required>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" class="modal-input" required>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" class="modal-input" required></textarea>
+                <label for="salary">Salary:</label>
+                <input type="number" id="salary" name="salary" class="modal-input" required>
+                <label for="companyEmail">Company Email:</label>
+                <input type="email" id="companyEmail" name="companyEmail" class="modal-input" required>
+                <label for="companyName">Company Name:</label>
+                <input type="text" id="companyName" name="companyName" class="modal-input" required>
+                <button type="button" onclick="submitJobUpdate()" class="modal-button">Update Job</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add New Job Modal -->
+    <div class="modal fade" id="resourceModal" tabindex="-1" role="dialog" aria-labelledby="resourceModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resourceModalLabel">Add New Job</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="addJobName">Job Name</label>
+                            <input type="text" class="form-control" id="addJobName" placeholder="Enter job name">
+                        </div>
+                        <div class="form-group">
+                            <label for="addLocation">Location</label>
+                            <input type="text" class="form-control" id="addLocation" placeholder="Enter job location">
+                        </div>
+                        <div class="form-group">
+                            <label for="addDescription">Description</label>
+                            <input type="text" class="form-control" id="addDescription"
+                                placeholder="Enter job description">
+                        </div>
+                        <div class="form-group">
+                            <label for="addSalary">Salary</label>
+                            <input type="text" class="form-control" id="addSalary" placeholder="Enter job salary">
+                        </div>
+                        <div class="form-group">
+                            <label for="addCompanyEmail">Company Email</label>
+                            <input type="text" class="form-control" id="addCompanyEmail"
+                                placeholder="Enter company email">
+                        </div>
+                        <div class="form-group">
+                            <label for="addCompanyName">Company Name</label>
+                            <input type="text" class="form-control" id="addCompanyName"
+                                placeholder="Enter company name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="addJob()">Add New Job</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Apply Job Modal -->
+    <div class="modal fade" id="applyJobModal" tabindex="-1" role="dialog" aria-labelledby="applyJobModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="applyJobModalLabel">Apply for Job</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="applyJobForm">
+                        <div class="form-group">
+                            <label for="applicantName">Name</label>
+                            <input type="text" class="form-control" id="applicantName" placeholder="Enter your name"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="applicantAge">Age</label>
+                            <input type="number" class="form-control" id="applicantAge" placeholder="Enter your age"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="applicantEducation">Education</label>
+                            <input type="text" class="form-control" id="applicantEducation"
+                                placeholder="Enter your education" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="applicantPhone">Phone</label>
+                            <input type="text" class="form-control" id="applicantPhone"
+                                placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="applicantEmail">Email</label>
+                            <input type="email" class="form-control" id="applicantEmail" placeholder="Enter your email"
+                                required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="submitApplication()">Submit
+                        Application</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts for Bootstrap modal functionality -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/searchJob.js"></script>
+    <script src="/js/updateJob.js"></script>
+    <script src="/js/applyJob.js"></script>
+    <script src="/js/createJob.js"></script>
+</body>
+
+</html>
