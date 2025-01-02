@@ -20,7 +20,7 @@ describe('Job Management Frontend', () => {
   });
 
   it('should add a new job', () => {
-    cy.get('button[data-target="#resourceModal"]').should('be.visible').click();
+    cy.get('#openAddJobModal').should('be.visible').click();
     cy.get('#resourceModal').should('be.visible').and('have.class', 'show');
 
     // Fill in the form fields
@@ -55,7 +55,7 @@ describe('Job Management Frontend', () => {
 
   // Ensure email format has to be correct to add new job
   it('should not allow invalid email format', () => {
-    cy.get('button[data-target="#resourceModal"]').click();
+    cy.get('#openAddJobModal').click();
     cy.get('#resourceModal').should('be.visible').and('have.class', 'show');
 
     cy.get('#addCompanyEmail').type('invalid-email');
@@ -72,7 +72,7 @@ describe('Job Management Frontend', () => {
 
   // Ensure that negative salary will not add new job
   it('should not allow negative salary', () => {
-    cy.get('button[data-target="#resourceModal"]').click();
+    cy.get('#openAddJobModal').click();
     cy.get('#resourceModal').should('be.visible').and('have.class', 'show');
 
     cy.get('#addSalary').type('-5000');
@@ -89,7 +89,7 @@ describe('Job Management Frontend', () => {
 
   // Ensure modal can close without adding job 
   it('should close the modal without adding a job', () => {
-    cy.get('button[data-target="#resourceModal"]').click();
+    cy.get('#openAddJobModal').click();
     cy.get('#resourceModal').should('be.visible').and('have.class', 'show');
     cy.get('#resourceModal .close').click();
 
@@ -98,7 +98,7 @@ describe('Job Management Frontend', () => {
 
   // Ensures duplicate job entries are handled gracefully
   it('should handle duplicate job entries gracefully', () => {
-    cy.get('button[data-target="#resourceModal"]').click();
+    cy.get('#openAddJobModal').click();
     cy.get('#resourceModal').should('be.visible').and('have.class', 'show');
 
     cy.get('#addJobName').type('Test Job 5');
@@ -112,7 +112,7 @@ describe('Job Management Frontend', () => {
     cy.get('#job-listings').contains('Test Job 5', { timeout: 10000 }).should('exist');
 
     // Try adding the same job again
-    cy.get('button[data-target="#resourceModal"]').click();
+    cy.get('#openAddJobModal').click();
     cy.get('#addJobName').type('Test Job 5');
     cy.get('#addLocation').type('Test Location');
     cy.get('#addDescription').type('Test Description');
@@ -126,7 +126,7 @@ describe('Job Management Frontend', () => {
 
   // Test case: Ensure Required Fields Are Enforced
   it('should enforce required fields for job creation', () => {
-    cy.get('button[data-target="#resourceModal"]').click();
+    cy.get('#openAddJobModal').click();
     cy.get('#resourceModal').should('be.visible');
 
     // Click the submit button without filling the form
@@ -146,7 +146,7 @@ describe('Job Management Frontend', () => {
 
   // Validate Salary Field for Non-Numeric Input
   it('should not allow non-numeric input for the salary field', () => {
-    cy.get('button[data-target="#resourceModal"]').click();
+    cy.get('#openAddJobModal').click();
     cy.get('#resourceModal').should('be.visible');
 
     cy.get('#addSalary').type('NotANumber');
@@ -174,7 +174,7 @@ describe('Job Management Frontend', () => {
       ).as('mockedNetworkError');
   
       // Open the modal to add a new job
-      cy.get('button[data-target="#resourceModal"]').click();
+      cy.get('#openAddJobModal').click();
       cy.get('#resourceModal').should('be.visible');
   
       // Fill in the form fields
