@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.83% </span>
+                <span class="strong">54.16% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/24</span>
+                <span class='fraction'>13/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.83% </span>
+                <span class="strong">54.16% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/24</span>
+                <span class='fraction'>13/24</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -102,28 +102,28 @@
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
 <a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -131,13 +131,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span></td><td class="text"><pre class="prettyprint lang-js">async function addJob() {
     const name = document.getElementById('addJobName').value;
@@ -156,10 +156,10 @@
             body: JSON.stringify(jobData)
         });
         const result = await response.json();
-        if (response.ok) {
-            alert('Job added successfully!');
-            loadJobs();
-            clearAndCloseModal();
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (response.ok) {
+<span class="cstat-no" title="statement not covered" >            alert('Job added successfully!');</span>
+<span class="cstat-no" title="statement not covered" >            loadJobs();</span>
+<span class="cstat-no" title="statement not covered" >            clearAndCloseModal();</span>
         } else {
             alert('Failed to add job: ' + result.message);
         }
@@ -168,14 +168,14 @@
     }
 }
 &nbsp;
-function clearAndCloseModal() {
-    document.getElementById('addJobName').value = '';
-    document.getElementById('addLocation').value = '';
-    document.getElementById('addDescription').value = '';
-    document.getElementById('addSalary').value = '';
-    document.getElementById('addCompanyEmail').value = '';
-    document.getElementById('addCompanyName').value = '';
-    $('#resourceModal').modal('hide');
+function <span class="fstat-no" title="function not covered" >clearAndCloseModal(</span>) {
+<span class="cstat-no" title="statement not covered" >    document.getElementById('addJobName').value = '';</span>
+<span class="cstat-no" title="statement not covered" >    document.getElementById('addLocation').value = '';</span>
+<span class="cstat-no" title="statement not covered" >    document.getElementById('addDescription').value = '';</span>
+<span class="cstat-no" title="statement not covered" >    document.getElementById('addSalary').value = '';</span>
+<span class="cstat-no" title="statement not covered" >    document.getElementById('addCompanyEmail').value = '';</span>
+<span class="cstat-no" title="statement not covered" >    document.getElementById('addCompanyName').value = '';</span>
+<span class="cstat-no" title="statement not covered" >    $('#resourceModal').modal('hide');</span>
 }
 window.onload = loadJobs;</pre></td></tr></table></pre>
 
@@ -184,7 +184,7 @@ window.onload = loadJobs;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-01-03T08:45:00.760Z
+                at 2025-01-03T08:49:22.630Z
             </div>
         <script src="prettify.js"></script>
         <script>
