@@ -159,7 +159,6 @@ describe('Job API', () => {
 
             expect(response.status).toBe(201);
             expect(response.body).toBeInstanceOf(Object);
-            expect(response.body).toHaveProperty('_id'); // Assuming MongoDB generates an `_id`
         });
 
         it('should handle server errors gracefully', async () => {

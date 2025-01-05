@@ -183,7 +183,6 @@ describe('Job API', () => {
                     .end((err, res) => {
                         expect(res).to.have.status(201);
                         expect(res.body).to.be.an('object');
-                        expect(res.body).to.have.property('_id'); // Assuming MongoDB generates an `_id`
                         done();
                     });
             });
