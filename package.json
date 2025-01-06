@@ -4,7 +4,7 @@
   "description": "part1",
   "main": "index.js",
   "scripts": {
-    "backend-test": "nyc --nycrc-path .nycrc-backend mocha --exit",
+    "backend-test": "nyc --nycrc-path .nycrc-backend node_modules/.bin/mocha --exit",
     "frontend-instrument": "xcopy public instrumented /I /E /Y & nyc instrument public instrumented",
     "frontend-test": "rmdir -r .nyc_output & nyc --nycrc-path .nycrc-frontend cypress run",
     "frontend-test-opera": "rmdir -r .nyc_output & nyc --nycrc-path .nycrc-frontend cypress run --browser opera",
@@ -23,11 +23,11 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "fs": "^0.0.1-security",
-    "mocha": "^10.8.2",
     "mongodb": "^6.10.0",
     "mongoose": "^8.8.0"
   },
   "devDependencies": {
+    "mocha": "^11.0.1",
     "nyc": "^17.1.0",
     "sinon": "^19.0.2",
     "supertest": "^7.0.0"
