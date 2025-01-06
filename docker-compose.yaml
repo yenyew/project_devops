@@ -1,0 +1,9 @@
+services:
+  build-rms:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: yenyew/project-docker-img:latest
+    container_name: project-docker-container
+    ports:
+      - "8000:5050"
