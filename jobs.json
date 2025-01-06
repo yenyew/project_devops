@@ -197,6 +197,94 @@
       "companyName": "Valid Company",
       "created_at": "2025-01-05T08:42:18.945Z",
       "updated_at": null
+    },
+    {
+      "id": 1736131364223,
+      "name": "Valid Job",
+      "location": "Valid Location",
+      "description": "This is a valid description",
+      "salary": "10000",
+      "companyEmail": "test@example.com",
+      "companyName": "Valid Company",
+      "created_at": "2025-01-06T02:42:44.223Z",
+      "updated_at": null
+    },
+    {
+      "id": 1736131447268,
+      "name": "Test Job",
+      "location": "Test Location",
+      "description": "Test Description",
+      "salary": "10000",
+      "companyEmail": "test@example.com",
+      "companyName": "Test Company",
+      "created_at": "2025-01-06T02:44:07.268Z",
+      "updated_at": null
+    },
+    {
+      "id": 1736131454479,
+      "name": "Test Job 5",
+      "location": "Test Location",
+      "description": "Test Description",
+      "salary": "10000",
+      "companyEmail": "test@example.com",
+      "companyName": "Test Company",
+      "created_at": "2025-01-06T02:44:14.479Z",
+      "updated_at": null
+    },
+    {
+      "id": 1736131462583,
+      "name": "error error Tes",
+      "location": "Network Error Location",
+      "description": "Testing network error handling",
+      "salary": "4000",
+      "companyEmail": "test@example.com",
+      "companyName": "Test Company",
+      "created_at": "2025-01-06T02:44:22.583Z",
+      "updated_at": null
+    },
+    {
+      "id": 1736131462586,
+      "name": "error error Tes",
+      "location": "Network Error Location",
+      "description": "Testing network error handling",
+      "salary": "4000",
+      "companyEmail": "test@example.com",
+      "companyName": "Test Company",
+      "created_at": "2025-01-06T02:44:22.586Z",
+      "updated_at": null
+    },
+    {
+      "id": 1736131462590,
+      "name": "error error Tes",
+      "location": "Network Error Location",
+      "description": "Testing network error handling",
+      "salary": "4000",
+      "companyEmail": "test@example.com",
+      "companyName": "Test Company",
+      "created_at": "2025-01-06T02:44:22.590Z",
+      "updated_at": null
+    },
+    {
+      "id": 1736131462594,
+      "name": "error error Tes",
+      "location": "Network Error Location",
+      "description": "Testing network error handling",
+      "salary": "4000",
+      "companyEmail": "test@example.com",
+      "companyName": "Test Company",
+      "created_at": "2025-01-06T02:44:22.594Z",
+      "updated_at": null
+    },
+    {
+      "id": 1736131462597,
+      "name": "error error Tes",
+      "location": "Network Error Location",
+      "description": "Testing network error handling",
+      "salary": "4000",
+      "companyEmail": "test@example.com",
+      "companyName": "Test Company",
+      "created_at": "2025-01-06T02:44:22.597Z",
+      "updated_at": null
     }
   ]
 }

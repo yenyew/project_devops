@@ -25,10 +25,10 @@
     "fs": "^0.0.1-security",
     "mocha": "^10.8.2",
     "mongodb": "^6.10.0",
-    "mongoose": "^8.8.0",
-    "nyc": "^17.1.0"
+    "mongoose": "^8.8.0"
   },
   "devDependencies": {
+    "nyc": "^17.1.0",
     "sinon": "^19.0.2",
     "supertest": "^7.0.0"
   }
