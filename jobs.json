@@ -461,6 +461,17 @@
       "companyName": "Test Company",
       "created_at": "2025-01-06T03:42:22.750Z",
       "updated_at": null
+    },
+    {
+      "id": 1736228379332,
+      "name": "helmifirdhaus",
+      "location": "London",
+      "description": "code code code",
+      "salary": "6000",
+      "companyEmail": "hr@london.com",
+      "companyName": "jia yu & co",
+      "created_at": "2025-01-07T05:39:39.332Z",
+      "updated_at": null
     }
   ]
 }
