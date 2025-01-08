@@ -1,15 +1,5 @@
 {
   "jobs": [
-    {
-      "id": 1736065285373,
-      "name": "Valid Job",
-      "location": "Valid Location",
-      "description": "This is a valid description",
-      "salary": "10000",
-      "companyEmail": "test@example.com",
-      "companyName": "Valid Company",
-      "created_at": "2025-01-05T08:21:25.373Z",
-      "updated_at": null
-    }
+    
   ]
 }
