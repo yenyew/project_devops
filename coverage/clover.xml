@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1736317322243" clover="3.2.0">
-  <project timestamp="1736317322243" name="All files">
-    <metrics statements="112" coveredstatements="41" conditionals="31" coveredconditionals="4" methods="12" coveredmethods="6" elements="155" coveredelements="51" complexity="0" loc="112" ncloc="112" packages="1" files="4" classes="4"/>
+<coverage generated="1736400946458" clover="3.2.0">
+  <project timestamp="1736400946458" name="All files">
+    <metrics statements="112" coveredstatements="43" conditionals="31" coveredconditionals="5" methods="12" coveredmethods="6" elements="155" coveredelements="54" complexity="0" loc="112" ncloc="112" packages="1" files="4" classes="4"/>
     <file name="applyjob.js" path="C:\Users\yenye\Documents\DVOPS_Projects\project_devops\public\js\applyjob.js">
       <metrics statements="22" coveredstatements="1" conditionals="9" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <line num="2" count="0" type="stmt"/>
@@ -40,26 +40,26 @@
       <line num="12" count="9" type="stmt"/>
       <line num="17" count="8" type="stmt"/>
       <line num="18" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="19" count="2" type="stmt"/>
-      <line num="20" count="2" type="stmt"/>
-      <line num="21" count="2" type="stmt"/>
-      <line num="23" count="6" type="stmt"/>
+      <line num="19" count="3" type="stmt"/>
+      <line num="20" count="3" type="stmt"/>
+      <line num="21" count="3" type="stmt"/>
+      <line num="23" count="5" type="stmt"/>
       <line num="26" count="0" type="stmt"/>
-      <line num="31" count="2" type="stmt"/>
-      <line num="32" count="2" type="stmt"/>
-      <line num="33" count="2" type="stmt"/>
-      <line num="34" count="2" type="stmt"/>
-      <line num="35" count="2" type="stmt"/>
-      <line num="36" count="2" type="stmt"/>
-      <line num="37" count="2" type="stmt"/>
+      <line num="31" count="3" type="stmt"/>
+      <line num="32" count="3" type="stmt"/>
+      <line num="33" count="3" type="stmt"/>
+      <line num="34" count="3" type="stmt"/>
+      <line num="35" count="3" type="stmt"/>
+      <line num="36" count="3" type="stmt"/>
+      <line num="37" count="3" type="stmt"/>
       <line num="39" count="12" type="stmt"/>
     </file>
     <file name="searchJob.js" path="C:\Users\yenye\Documents\DVOPS_Projects\project_devops\public\js\searchJob.js">
-      <metrics statements="26" coveredstatements="13" conditionals="4" coveredconditionals="1" methods="4" coveredmethods="3"/>
-      <line num="2" count="14" type="stmt"/>
-      <line num="3" count="14" type="stmt"/>
-      <line num="4" count="14" type="stmt"/>
-      <line num="5" count="14" type="stmt"/>
+      <metrics statements="26" coveredstatements="15" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="3"/>
+      <line num="2" count="15" type="stmt"/>
+      <line num="3" count="15" type="stmt"/>
+      <line num="4" count="15" type="stmt"/>
+      <line num="5" count="15" type="stmt"/>
       <line num="7" count="0" type="stmt"/>
       <line num="12" count="0" type="stmt"/>
       <line num="13" count="0" type="stmt"/>
@@ -71,16 +71,16 @@
       <line num="20" count="0" type="stmt"/>
       <line num="22" count="0" type="stmt"/>
       <line num="25" count="0" type="stmt"/>
-      <line num="30" count="14" type="stmt"/>
-      <line num="31" count="14" type="stmt"/>
-      <line num="32" count="14" type="cond" truecount="1" falsecount="1"/>
-      <line num="33" count="0" type="stmt"/>
-      <line num="34" count="0" type="stmt"/>
-      <line num="37" count="14" type="stmt"/>
-      <line num="38" count="604" type="stmt"/>
-      <line num="39" count="604" type="stmt"/>
-      <line num="40" count="604" type="stmt"/>
-      <line num="54" count="604" type="stmt"/>
+      <line num="30" count="15" type="stmt"/>
+      <line num="31" count="15" type="stmt"/>
+      <line num="32" count="15" type="cond" truecount="2" falsecount="0"/>
+      <line num="33" count="2" type="stmt"/>
+      <line num="34" count="2" type="stmt"/>
+      <line num="37" count="13" type="stmt"/>
+      <line num="38" count="22" type="stmt"/>
+      <line num="39" count="22" type="stmt"/>
+      <line num="40" count="22" type="stmt"/>
+      <line num="54" count="22" type="stmt"/>
       <line num="57" count="12" type="stmt"/>
     </file>
     <file name="updateJob.js" path="C:\Users\yenye\Documents\DVOPS_Projects\project_devops\public\js\updateJob.js">
