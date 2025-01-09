@@ -18,13 +18,12 @@
                 <option>Any Classification</option>
             </select>
             <button onclick="searchJobs()">Search</button>
-            <button id= "openAddJobModal" class="btn btn-primary" data-toggle="modal" data-target="#resourceModal">Add New Job</button>
+            <button id="openAddJobModal" class="btn btn-primary" data-toggle="modal" data-target="#resourceModal">Add New Job</button>
         </div>
     </header>
 
     <div id="job-listings" class="container">
-
-        <!-- Job listings will be displayed here -->
+        <!-- Job listings will be dynamically loaded here -->
     </div>
 
     <!-- Modal for updating job listing -->
@@ -73,8 +72,7 @@
                         </div>
                         <div class="form-group">
                             <label for="addDescription">Description</label>
-                            <input type="text" class="form-control" id="addDescription"
-                                placeholder="Enter job description">
+                            <input type="text" class="form-control" id="addDescription" placeholder="Enter job description">
                         </div>
                         <div class="form-group">
                             <label for="addSalary">Salary</label>
@@ -82,13 +80,11 @@
                         </div>
                         <div class="form-group">
                             <label for="addCompanyEmail">Company Email</label>
-                            <input type="text" class="form-control" id="addCompanyEmail"
-                                placeholder="Enter company email">
+                            <input type="text" class="form-control" id="addCompanyEmail" placeholder="Enter company email">
                         </div>
                         <div class="form-group">
                             <label for="addCompanyName">Company Name</label>
-                            <input type="text" class="form-control" id="addCompanyName"
-                                placeholder="Enter company name">
+                            <input type="text" class="form-control" id="addCompanyName" placeholder="Enter company name">
                         </div>
                     </form>
                 </div>
@@ -101,8 +97,7 @@
     </div>
 
     <!-- Apply Job Modal -->
-    <div class="modal fade" id="applyJobModal" tabindex="-1" role="dialog" aria-labelledby="applyJobModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="applyJobModal" tabindex="-1" role="dialog" aria-labelledby="applyJobModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -115,35 +110,29 @@
                     <form id="applyJobForm">
                         <div class="form-group">
                             <label for="applicantName">Name</label>
-                            <input type="text" class="form-control" id="applicantName" placeholder="Enter your name"
-                                required>
+                            <input type="text" class="form-control" id="applicantName" placeholder="Enter your name" required>
                         </div>
                         <div class="form-group">
                             <label for="applicantAge">Age</label>
-                            <input type="number" class="form-control" id="applicantAge" placeholder="Enter your age"
-                                required>
+                            <input type="number" class="form-control" id="applicantAge" placeholder="Enter your age" required>
                         </div>
                         <div class="form-group">
                             <label for="applicantEducation">Education</label>
-                            <input type="text" class="form-control" id="applicantEducation"
-                                placeholder="Enter your education" required>
+                            <input type="text" class="form-control" id="applicantEducation" placeholder="Enter your education" required>
                         </div>
                         <div class="form-group">
                             <label for="applicantPhone">Phone</label>
-                            <input type="text" class="form-control" id="applicantPhone"
-                                placeholder="Enter your phone number" required>
+                            <input type="text" class="form-control" id="applicantPhone" placeholder="Enter your phone number" required>
                         </div>
                         <div class="form-group">
                             <label for="applicantEmail">Email</label>
-                            <input type="email" class="form-control" id="applicantEmail" placeholder="Enter your email"
-                                required>
+                            <input type="email" class="form-control" id="applicantEmail" placeholder="Enter your email" required>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="submitApplication()">Submit
-                        Application</button>
+                    <button type="button" class="btn btn-primary" onclick="submitApplication()">Submit Application</button>
                 </div>
             </div>
         </div>
@@ -156,6 +145,44 @@
     <script src="/js/updateJob.js"></script>
     <script src="/js/applyjob.js"></script>
     <script src="/js/createJob.js"></script>
+
+    <!-- Script for loading job listings dynamically -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const jobListingsContainer = document.getElementById("job-listings");
+
+            // Function to load job data from jobs.json
+            async function loadJobs() {
+                try {
+                    const response = await fetch('/path/to/jobs.json'); // Update this path to the correct location of your jobs.json file
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch jobs data');
+                    }
+                    const jobs = await response.json();
+
+                    // Populate the job listings container
+                    jobListingsContainer.innerHTML = jobs.map(job => `
+                        <div class="job-card card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">${job.name}</h5>
+                                <p class="card-text"><strong>Location:</strong> ${job.location}</p>
+                                <p class="card-text"><strong>Description:</strong> ${job.description}</p>
+                                <p class="card-text"><strong>Salary:</strong> $${job.salary}</p>
+                                <p class="card-text"><strong>Company Name:</strong> ${job.companyName}</p>
+                                <p class="card-text"><strong>Company Email:</strong> <a href="mailto:${job.companyEmail}">${job.companyEmail}</a></p>
+                            </div>
+                        </div>
+                    `).join('');
+                } catch (error) {
+                    console.error('Error loading job data:', error);
+                    jobListingsContainer.innerHTML = `<p class="text-danger">Failed to load job listings. Please try again later.</p>`;
+                }
+            }
+
+            // Call the function to load jobs
+            loadJobs();
+        });
+    </script>
 </body>
 
 </html>
