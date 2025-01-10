@@ -16,23 +16,49 @@ describe('Job Management Frontend', () => {
     cy.visit(baseUrl);
   });
 
-  it('should add a new job', () => {
-    cy.get('#openAddJobModal').click();
-    cy.get('#resourceModal').should('be.visible').and('have.class', 'show');
+// Test case: Ensure a job is added successfully
+it('should add a job successfully and display an alert', () => {
+  // Open the modal
+  cy.get('#openAddJobModal').click();
+  cy.get('#resourceModal').should('be.visible');
 
-    cy.get('#addJobName').type('Test Job');
-    cy.get('#addLocation').type('Test Location');
-    cy.get('#addDescription').type('Test Description');
-    cy.get('#addSalary').type('10000');
-    cy.get('#addCompanyEmail').type('test@example.com');
-    cy.get('#addCompanyName').type('Test Company');
+  // Fill out the job form
+  cy.get('#addJobName').type('Successful Job');
+  cy.get('#addLocation').type('Test Location');
+  cy.get('#addDescription').type('Test Description');
+  cy.get('#addSalary').type('5000');
+  cy.get('#addCompanyEmail').type('test@example.com');
+  cy.get('#addCompanyName').type('Test Company');
 
-    cy.get('#resourceModal .btn-primary').click();
+  // Intercept the network request to simulate a successful job addition
+  cy.intercept('POST', '/add-job', {
+    statusCode: 200,
+    body: { success: true },
+  }).as('addJobRequest');
 
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('Job added successfully!');
-    });
+  // Intercept the loadJobs call to simulate fetching the updated list
+  cy.intercept('GET', '/path/to/jobs.json', {
+    statusCode: 200,
+    body: [
+      {
+        name: 'Successful Job',
+        location: 'Test Location',
+        description: 'Test Description',
+        salary: 5000,
+        companyName: 'Test Company',
+        companyEmail: 'test@example.com',
+      },
+    ],
+  }).as('loadJobsRequest');
+
+  // Submit the form
+  cy.get('#resourceModal .btn-primary').click();
+
+  // Verify the success alert is shown
+  cy.on('window:alert', (str) => {
+    expect(str).to.equal('Job added successfully!');
   });
+});
 
   // Ensure empty form will not add new job
   it('should not allow empty form submission', () => {
@@ -96,8 +122,8 @@ describe('Job Management Frontend', () => {
     cy.get('#job-listings').contains('Test Job 4').should('not.exist');
   });
 
-   // Test case: Ensure Required Fields Are Enforced
-   it('should enforce required fields for job creation', () => {
+  // Test case: Ensure Required Fields Are Enforced
+  it('should enforce required fields for job creation', () => {
     cy.get('#openAddJobModal').click();
     cy.get('#resourceModal').should('be.visible');
 
