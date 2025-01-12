@@ -439,6 +439,50 @@
       "companyName": "Company",
       "created_at": "2025-01-10T07:12:09.053Z",
       "updated_at": null
+    },
+    {
+      "id": 1736663526599,
+      "name": "Network Error Job",
+      "location": "Location",
+      "description": "Description",
+      "salary": "4000",
+      "companyEmail": "test@example.com",
+      "companyName": "Company",
+      "created_at": "2025-01-12T06:32:06.599Z",
+      "updated_at": null
+    },
+    {
+      "id": 1736663526603,
+      "name": "Network Error Job",
+      "location": "Location",
+      "description": "Description",
+      "salary": "4000",
+      "companyEmail": "test@example.com",
+      "companyName": "Company",
+      "created_at": "2025-01-12T06:32:06.603Z",
+      "updated_at": null
+    },
+    {
+      "id": 1736663526607,
+      "name": "Network Error Job",
+      "location": "Location",
+      "description": "Description",
+      "salary": "4000",
+      "companyEmail": "test@example.com",
+      "companyName": "Company",
+      "created_at": "2025-01-12T06:32:06.607Z",
+      "updated_at": null
+    },
+    {
+      "id": 1736663526613,
+      "name": "Network Error Job",
+      "location": "Location",
+      "description": "Description",
+      "salary": "4000",
+      "companyEmail": "test@example.com",
+      "companyName": "Company",
+      "created_at": "2025-01-12T06:32:06.613Z",
+      "updated_at": null
     }
   ]
 }
